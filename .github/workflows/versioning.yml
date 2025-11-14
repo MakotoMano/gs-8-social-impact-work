@@ -27,9 +27,15 @@ jobs:
       - name: Bump patch version
         id: bump_version
         run: |
-          IFS='.' read -r major minor patch <<<"${{ steps.get_latest_tag.outputs.latest_tag#v }}"
+          # pega a tag mais recente vX.Y.Z
+          latest_tag="${{ steps.get_latest_tag.outputs.latest_tag }}"
+          # remove o 'v' do começo -> X.Y.Z
+          latest_tag="${latest_tag#v}"
+
+          IFS='.' read -r major minor patch <<<"$latest_tag"
           patch=$((patch + 1))
           new_tag="v$major.$minor.$patch"
+
           echo "new_tag=$new_tag" >> $GITHUB_OUTPUT
 
       - name: Create tag
