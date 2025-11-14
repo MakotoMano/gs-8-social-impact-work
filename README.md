@@ -41,3 +41,6 @@ https://hub.docker.com/r/makotomano/gs-8-social-impact-work
 
 # Swagger UI
 http://localhost:8081/swagger-ui/index.html
+
+
+- Teste do workflow de CD.
