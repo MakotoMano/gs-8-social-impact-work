@@ -41,3 +41,26 @@ https://hub.docker.com/r/makotomano/gs-8-social-impact-work
 
 # Swagger UI
 http://localhost:8081/swagger-ui/index.html
+```
+## ⚙️ Workflows CI/CD (GitHub Actions)
+
+- **Versioning (versioning.yml)**  
+  Disparado em `push` na branch `main`.  
+  Gera automaticamente uma nova tag (`vX.Y.Z`) e uma Release no GitHub.
+
+- **CI (ci.yml)**  
+  Disparado em `push` nas branches `feature/**`, `release` e `hotfix`.  
+  Executa:
+  - Build da aplicação com Maven (`./mvnw clean verify`)
+  - Testes
+  - Build da imagem Docker (para validação do Dockerfile)
+
+- **CD (cd.yml)**  
+  Disparado em **pull requests com base na branch `develop`**.  
+  Executa:
+  - Build da aplicação (`./mvnw clean package -DskipTests`)
+  - Login no Docker Hub
+  - Build e push da imagem Docker:
+    - `SEU_USUARIO/gs-8-social-impact-work:latest`
+    - `SEU_USUARIO/gs-8-social-impact-work:<SHA do commit>`
+
