@@ -11,24 +11,15 @@ API Java Spring Boot desenvolvida como parte da Global Solution de **Microservic
 
 ---
 
-## 🎯 Tema escolhido
+## 🌐 URL da imagem no Docker Hub
 
-**8. Modelos de trabalho baseados em impacto social e sustentabilidade**
+A imagem Docker deste projeto está disponível em:
 
-O projeto aborda como organizações podem estruturar modelos de trabalho que gerem resultado econômico, mas também promovam impacto social positivo e práticas sustentáveis.  
-A API serve como ponto de integração para aplicações que desejem consultar informações sobre o tema e utilizá-las em outros serviços ou front-ends.
+`https://hub.docker.com/r/makotomano/gs-8-social-impact-work`
 
 ---
 
-## 🧩 Finalidade da API
-
-Esta API expõe um endpoint simples, voltado à integração com outros sistemas, contendo:
-
-- Identificação do tema da Global Solution  
-- Nomes dos membros do grupo  
-- Uma breve descrição textual do tema e de seu propósito  
-
-Endpoint principal:
+## 🧩 Endpoint principal:
 
 - `GET /info`  
   Retorna um JSON no seguinte formato:
@@ -41,13 +32,6 @@ Endpoint principal:
   "descricao": "API que descreve modelos de trabalho focados em impacto social e sustentabilidade, mostrando como organizações podem alinhar resultados econômicos com impacto social positivo."
 }
 ```
-
-A documentação da API é disponibilizada automaticamente via **Swagger / OpenAPI**, permitindo que outros times ou serviços consultem e testem o endpoint pela interface web.
-
----
-
-## ▶️ Como executar o projeto localmente
-
 ### ✅ Pré-requisitos
 
 - **Java 17**  
@@ -87,14 +71,6 @@ A API estará acessível em:
 
 - [http://localhost:8081/info](http://localhost:8081/info)  
 - [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
-
----
-
-## 🌐 URL da imagem no Docker Hub
-
-A imagem Docker deste projeto está disponível em:
-
-`https://hub.docker.com/r/makotomano/gs-8-social-impact-work`
 
 ---
 
